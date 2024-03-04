@@ -1,4 +1,8 @@
-import { Package, PackageOpen } from "lucide-react";
+import { Package, PackageOpen,  } from "lucide-react";
+import { Poppins } from "next/font/google";
+
+const poppins= Poppins({ weight:"600", style:"normal",  preload: false,});
+
 
 
 export default function MenuList() {
@@ -23,7 +27,7 @@ export default function MenuList() {
     ];
     return (
         <>
-            <div className="text-3xl mb-4">HNDIT</div>
+            <div className={`text-3xl mb-4 ${poppins.className}`}>HNDIT</div>
             <div className="space-y-2">
                 {menuList.map((item, index) => (
 
