@@ -1,12 +1,12 @@
 export default function Form() {
   return (
     <>
-      <div className="flex flex-col gap-y-10 items-center justify-center h-screen">
-        <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex flex-col gap-y-10 items-center justify-center  ">
+        <div className="flex  flex-col justify-center px-6 py-12 lg:px-8 border-4 rounded-xl">
           <div className="text-3xl">Login</div>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-2" action="#" method="POST">
               {/* <div>
                 <label
                   htmlFor="email"
@@ -89,10 +89,10 @@ export default function Form() {
                 </div>
               </div> */}
 
-              <div>
+              <div className="flex justify-center ">
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className=" mt-4 flex w-2/3 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Sign in
                 </button>

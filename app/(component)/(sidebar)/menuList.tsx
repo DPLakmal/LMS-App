@@ -15,19 +15,23 @@ export default function MenuList() {
     const menuList = [
         {
             id: 1,
-            name: 'semester -  1'
+            name: 'semester -  1',
+            year: '1'
         },
         {
             id: 2,
-            name: 'semester - 2'
+            name: 'semester - 2',
+            year: '1'
         },
         {
             id: 2,
-            name: 'semester - 3'
+            name: 'semester - 3',
+            year: '2'
         },
         {
             id: 2,
-            name: 'semester -  4'
+            name: 'semester -  4',
+            year: '2'
         },
 
     ];
@@ -38,6 +42,7 @@ export default function MenuList() {
                 {menuList.map((item, index) => (
 
                     <div key={index} onClick={() => { setIsActiveItem(index) }} className={`p-3 rounded-2xl ${isActiveItem == index? 'bg-red-500':'bg-white'} hover:bg-gray-200`}>
+                       <div className="bg-gray-100 w-fit px-2 rounded-md">Year {item.year }</div>
                         <div className="flex flex-row gap-x-3">
                             <div className="flex items-center">
                                 {
