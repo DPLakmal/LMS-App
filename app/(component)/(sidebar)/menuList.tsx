@@ -1,11 +1,17 @@
-import { Package, PackageOpen,  } from "lucide-react";
-import { Poppins } from "next/font/google";
+"use client"
 
-const poppins= Poppins({ weight:"600", style:"normal",  preload: false,});
+import { Key } from "lucide-react";
+import { Poppins } from "next/font/google";
+import { useState } from "react";
+import { LuPackage, LuPackageOpen } from "react-icons/lu";
+
+const poppins = Poppins({ weight: "600", style: "normal", preload: false, });
 
 
 
 export default function MenuList() {
+    // const [isActive, setIsActive] = useState(false);
+    const [isActiveItem, setIsActiveItem] = useState(0);
     const menuList = [
         {
             id: 1,
@@ -31,18 +37,19 @@ export default function MenuList() {
             <div className="space-y-2">
                 {menuList.map((item, index) => (
 
-                    <div className="p-3 rounded-2xl bg-white hover:bg-gray-200">
+                    <div key={index} onClick={() => { setIsActiveItem(index) }} className={`p-3 rounded-2xl ${isActiveItem == index? 'bg-red-500':'bg-white'} hover:bg-gray-200`}>
                         <div className="flex flex-row gap-x-3">
-                            <div className="hover:hidden">
-                            <PackageOpen className="hidden" />
-                            <Package className="" />
+                            <div className="flex items-center">
+                                {
+                                    isActiveItem == index ? <LuPackage /> : <LuPackageOpen />
+                                }
                             </div>
-                    
                             {item.name}
                         </div>
                     </div>
                 ))
                 }
+
             </div>
         </>
     )
