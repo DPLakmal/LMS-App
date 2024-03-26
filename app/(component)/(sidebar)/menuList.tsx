@@ -46,7 +46,7 @@ export default function MenuList() {
                         <div className="flex flex-row gap-x-3">
                             <div className="flex items-center">
                                 {
-                                    isActiveItem == index ? <LuPackage /> : <LuPackageOpen />
+                                    isActiveItem == index ? <LuPackageOpen /> : <LuPackage />
                                 }
                             </div>
                             {item.name}
