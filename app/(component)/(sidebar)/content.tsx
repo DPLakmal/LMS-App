@@ -52,7 +52,7 @@ export default function Content() {
     ]
     
     return (
-        <div className="min-w-60 grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-10">
+        <div className="min-w-60 grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10">
             {subjects.map((item) => (
 
                 <Link href={`${item.id}`}>
