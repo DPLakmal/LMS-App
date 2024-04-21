@@ -41,8 +41,8 @@ export default function MenuList() {
             <div className="space-y-2">
                 {menuList.map((item, index) => (
 
-                    <div key={index} onClick={() => { setIsActiveItem(index) }} className={`p-3 rounded-2xl ${isActiveItem == index? 'bg-red-500':'bg-white'} hover:bg-gray-200`}>
-                       <div className="bg-gray-100 w-fit px-2 rounded-md">Year {item.year }</div>
+                    <div key={index} onClick={() => { setIsActiveItem(index) }} className={`p-3 rounded-2xl ${isActiveItem == index ? 'bg-red-500' : 'bg-white'} hover:bg-gray-200`}>
+                        <div className="bg-gray-100 w-fit px-2 rounded-md">Year {item.year}</div>
                         <div className="flex flex-row gap-x-3">
                             <div className="flex items-center">
                                 {
@@ -59,8 +59,6 @@ export default function MenuList() {
         </>
     )
 }
-
-
 
 
 

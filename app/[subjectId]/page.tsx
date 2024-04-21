@@ -1,8 +1,14 @@
+import Image from "next/image"
+import SiderBar from "../(component)/(sidebar)/siderBar"
+import NavBar from "../(component)/navBar"
 
-export default function subject() {
-    return (
-        <div>
-            mesfsf work!
-        </div>
-    )
+
+
+export default function Dashboard() {
+  return (<>
+
+  <NavBar/>
+  <SiderBar/>
+  </>
+  )
 }
