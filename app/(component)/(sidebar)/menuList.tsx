@@ -2,6 +2,7 @@
 
 import { Key } from "lucide-react";
 import { Poppins } from "next/font/google";
+import Link from "next/link";
 import { useState } from "react";
 import { LuPackage, LuPackageOpen } from "react-icons/lu";
 
@@ -15,7 +16,7 @@ export default function MenuList() {
     const menuList = [
         {
             id: 1,
-            name: 'semester -  1',
+            name: 'sem1',
             year: '1'
         },
         {
@@ -40,7 +41,7 @@ export default function MenuList() {
             <div className={`text-3xl mb-4 ${poppins.className}`}>HNDIT</div>
             <div className="space-y-2">
                 {menuList.map((item, index) => (
-
+                    // <Link href={`${item.name}`} key={item.id}>
                     <div key={index} onClick={() => { setIsActiveItem(index) }} className={`p-3 rounded-2xl ${isActiveItem == index ? 'bg-red-500' : 'bg-white'} hover:bg-gray-200`}>
                         <div className="bg-gray-100 w-fit px-2 rounded-md">Year {item.year}</div>
                         <div className="flex flex-row gap-x-3">
@@ -52,6 +53,7 @@ export default function MenuList() {
                             {item.name}
                         </div>
                     </div>
+                    // </Link>
                 ))
                 }
 

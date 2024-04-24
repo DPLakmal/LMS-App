@@ -3,7 +3,7 @@ import MenuList from "./menuList"
 
 
 
-export default function SiderBar() {
+export default function SideBar() {
     return (
         <div className="flex flex-col w-64 border-r min-h-screen p-4  ">
             <div className="flex flex-row border p-3 rounded-xl">

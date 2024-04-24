@@ -12,7 +12,7 @@ export default function Nav() {
       </div>
       <Link href="/login">
 
-        <Image className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="https://i.pravatar.cc/150?img=3" alt="Bordered avatar" />
+        <Image width={40} height={40} className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="" alt="Bordered avatar" />
       </Link>
 
     </div>
