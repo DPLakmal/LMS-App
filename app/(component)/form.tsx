@@ -114,8 +114,8 @@ export default function Form() {
                   </a>
                 </div>
               </div>
-              <div className="flex flow-col-2 gap-1 pt-3 ">
-                <div className=" text-center">
+              <div className="flex flow-col-2 gap-1 pt-3 text-sm justify-end">
+                <div className=" ">
                   Already have an not account?
                 </div>
                 <Link href={`/register`} className="text-blue-500">Register</Link>
