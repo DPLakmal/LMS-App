@@ -1,37 +1,23 @@
-'use client'
-
-import SiderBar from "./(component)/(sidebar)/sideBar";
-import Content from "./(component)/(sidebar)/content";
-import Nav from "./(component)/(navbar)/nav";
-import { useParams } from "next/navigation";
+import SideBar from './_components/(sidebar)/sideBar'
+import Nav from './_components/(navbar)/nav'
+import Content from './_components/(sidebar)/content'
+import MobileNavigationBar from './_components/mobile-navigationBar'
 
 export default function Home() {
-  const params = useParams<{ tag: string; item: string }>()
-
   return (
-    // <div className="flex items-start justify-between ">
-    //   <SiderBar />
-    //   <main className="flex flex-col w-full h-full ">
-    //     <div className="border-b-2 p-3 "><Nav /></div>
-
-    //     <div className="h-screen w-full m-4">
-
-          // {
-
-          //   // (params.item == "sem1") ?
-          //   <Content />
-          //   // :
-          //   // <div className="">no data</div>
-
-          // }
-          // {/* 
-          // <div className=" bg-red-400">
-
-          //   console.log(params.item);
-          // </div> */}
-
-      //   </div>
-      // </main >
-    // </div>
-  );
+    <div className="flex flex-col h-screen w-screen">
+      <Nav />
+      <div className="flex-row flex">
+        <div className="hidden md:flex ">
+          <SideBar />
+        </div>
+        <div className="flex items-center justify-center w-full">
+          <Content />
+        </div>
+      </div>
+      <div className="flex md:hidden">
+        <MobileNavigationBar />
+      </div>
+    </div>
+  )
 }
