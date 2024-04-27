@@ -7,7 +7,7 @@ export default function Register() {
     <div className="">
       <div className="shadow-sm border-2 rounded-xl  w-fit  p-6 h-fit">
 
-        <div className="text-3xl font-bold">Register</div>
+        <div className="text-3xl font-bold">Create an account</div>
 
 
         <form className="max-w-sm mx-auto">

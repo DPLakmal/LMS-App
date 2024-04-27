@@ -1,10 +1,11 @@
-import Form from "../(component)/form";
-import Logo from "../(component)/logo";
+
+import Logo from "../../(component)/logo";
+import Register from "./page";
 
 
 export default function Login() {
 
-    return (<div className="w-full h-screen flex justify-center items-center">
+    return (<div className=" h-screen flex justify-center items-center">
 
         <div className="flex flex-col w-full h-screen  justify-center items-center">
             <div className="text-xl mb-7">
@@ -12,12 +13,13 @@ export default function Login() {
                 <div className=" text-center">
                     E - Learning Management System
                 </div>
+
             </div>
 
 
-            <div className="flex  gap-x-12  border-2 w-min py-5 px-8 rounded-xl shadow-md">
+            <div className="flex justify-center w-fit py-5 px-8  gap-x-12  border-2  rounded-xl shadow-md">
                 <Logo />
-                <Form />
+                <Register />
             </div>
         </div>
     </div>

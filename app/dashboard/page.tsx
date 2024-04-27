@@ -1,8 +1,8 @@
-
+import Content from "../(component)/(sidebar)/content";
 export default function Page() {
     return (
         <div>
-            menuList work!
+            {/* <Content /> */}
         </div>
     )
 }
