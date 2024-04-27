@@ -1,5 +1,4 @@
-
-import Logo from "../../(component)/logo";
+import Logo from "@/app/_components/logo";
 import Register from "./page";
 
 
