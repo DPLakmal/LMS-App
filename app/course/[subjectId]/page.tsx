@@ -1,6 +1,6 @@
-import Image from "next/image"
-import SiderBar from "../../(component)/(sidebar)/sideBar"
-import NavBar from "../../(component)/navBar"
+import SideBar from "@/app/_components/(sidebar)/sideBar";
+import NavBar from "@/app/_components/navBar";
+
 
 
 
@@ -8,7 +8,7 @@ export default function Dashboard() {
   return (<>
 
     <NavBar />
-    <SiderBar />
+    <SideBar />
   </>
   )
 }

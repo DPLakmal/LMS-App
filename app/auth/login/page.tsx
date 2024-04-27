@@ -1,7 +1,5 @@
-
-import Logo from "../../(component)/logo";
-import { FormEvent } from "react";
 import Link from "next/link";
+import Logo from "@/app/_components/logo";
 
 
 

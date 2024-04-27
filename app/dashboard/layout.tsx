@@ -1,5 +1,4 @@
-import SideBar from '../(component)/(sidebar)/sideBar'
-import MobileNavigationBar from '../(component)/mobile-navigationBar'
+
 
 
 export default function DashboardLayout({
@@ -12,11 +11,11 @@ export default function DashboardLayout({
     return (
         <div className="h-full">
             <div className="hidden md:flex h-full w-56 flex-col fixed inset-y-0 z-50">
-                <SideBar />
+                {/* <SideBar /> */}
             </div>
             <div className="flex">
                 {children}
-                <MobileNavigationBar />
+                {/* <MobileNavigationBar /> */}
             </div>
         </div>
     )
