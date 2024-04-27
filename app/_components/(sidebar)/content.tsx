@@ -4,17 +4,63 @@ import { Poppins } from "next/font/google";
 const poppins = Poppins({ weight: "600", style: "normal", preload: false, });
 
 
-async function getData() {
-    const res = await fetch('http://localhost:3001/api/sem1', { cache: 'force-cache' })
-    if (!res.ok) {
-        throw new Error('Failed to fetch data')
+// async function getData() {
+//     const res = await fetch('http://localhost:3001/api/sem1', { cache: 'force-cache' })
+//     if (!res.ok) {
+//         throw new Error('Failed to fetch data')
+//     }
+//     return res.json()
+// }
+
+const data = [
+    {
+        "id": "3012",
+        "title": "Object Oriented Programming (Pl)",
+        "coverImg": "https://placehold.co/600x400",
+        "credit": 4
+    },
+    {
+        "id": "3022",
+        "title": "Web Programming",
+        "coverImg": "https://placehold.co/600x400",
+        "credit": 4
+    },
+    {
+        "id": "3032",
+        "title": "Data Structures and Algorithms",
+        "coverImg": "https://placehold.co/600x400",
+        "credit": 2
+    },
+    {
+        "id": "3042",
+        "title": "Database Management Systems",
+        "coverImg": "https://placehold.co/600x400",
+        "credit": 3
+    },
+    {
+        "id": "3052",
+        "title": "Operating Systems",
+        "coverImg": "https://placehold.co/600x400",
+        "credit": 2
+    },
+    {
+        "id": "3062",
+        "title": "Information and Computer Security",
+        "coverImg": "https://placehold.co/600x400",
+        "credit": 2
+    },
+    {
+        "id": "3072",
+        "title": "Statistics for IT",
+        "coverImg": "https://placehold.co/600x400",
+        "credit": 3
     }
-    return res.json()
-}
+]
+
 
 
 export default async function Content() {
-    const data = await getData()
+    // const data = await getData()
 
     return (
         <div className="  my-3">
