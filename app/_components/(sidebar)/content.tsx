@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 import { Poppins } from "next/font/google";
+import Image from "next/image";
 const poppins = Poppins({ weight: "600", style: "normal", preload: false, });
 
 
@@ -68,7 +69,7 @@ export default async function Content() {
                 {data.map((item: any) => (
                     <Link href={`${item.code}`} key={item.code}>
                         <div className=" size-80 bg-red-500 rounded-2xl shadow-md">
-                            <img src={item.coverImg} alt="" className="p-2 rounded-3xl" />
+                            <Image height={320} width={320} src={item.coverImg} alt="" className="p-2 rounded-3xl" />
                             <div className={` text-center text-white ${poppins.className}`}>
                                 {item.title}
                             </div>
