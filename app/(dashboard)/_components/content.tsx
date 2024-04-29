@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
-const poppins = Poppins({ weight: "600", style: "normal", preload: false, });
+const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 
 // async function getData() {
@@ -17,43 +17,43 @@ const data = [
     {
         "id": "3012",
         "title": "Object Oriented Programming (Pl)",
-        "coverImg": "https://placehold.co/600x400",
+        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 4
     },
     {
         "id": "3022",
         "title": "Web Programming",
-        "coverImg": "https://placehold.co/600x400",
+        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 4
     },
     {
         "id": "3032",
         "title": "Data Structures and Algorithms",
-        "coverImg": "https://placehold.co/600x400",
+        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 2
     },
     {
         "id": "3042",
         "title": "Database Management Systems",
-        "coverImg": "https://placehold.co/600x400",
+        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 3
     },
     {
         "id": "3052",
         "title": "Operating Systems",
-        "coverImg": "https://placehold.co/600x400",
+        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 2
     },
     {
         "id": "3062",
         "title": "Information and Computer Security",
-        "coverImg": "https://placehold.co/600x400",
+        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 2
     },
     {
         "id": "3072",
         "title": "Statistics for IT",
-        "coverImg": "https://placehold.co/600x400",
+        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 3
     }
 ]
@@ -65,7 +65,7 @@ export default async function Content() {
 
     return (
         <div className="  my-3">
-            <div className="min-w-60 grid  grid-col md:grid-cols-2 lg:grid-cols-3 gap-5 mx-1 ">
+            <div className="min-w-60 grid  grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-1 ">
                 {data.map((item: any) => (
                     <Link href={`${item.code}`} key={item.code}>
                         <div className=" size-80 bg-red-500 rounded-2xl shadow-md">
