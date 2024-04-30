@@ -8,7 +8,7 @@ export const SideBarRoutes = () => {
         {
             icon: Layout,
             lable: 'Dashboard',
-            href: '/',
+            href: '/dashboard',
         },
         {
             icon: Folder,

@@ -5,7 +5,9 @@ const SubjectPage = ({ params }: { params: { slug: string } }) => {
 
     <div className="w-full">
       <div className="mt-6">
-        <Week />
+        <Week params={{
+          id: "week1"
+        }} />
       </div>
     </div>
   );
