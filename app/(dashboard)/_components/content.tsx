@@ -70,11 +70,11 @@ export default async function Content() {
                     <Link href={`/courses/${item.code}`} key={item.code}>
                         <div className=" size-80 bg-white border rounded-2xl shadow-sm hover:shadow-md">
                             <Image height={320} width={320} src={item.coverImg} alt="" className="p-2 rounded-3xl" />
-                            <div className={` text-center text-white ${poppins.className}`}>
+                            <div className={` text-center  ${poppins.className}`}>
                                 {item.title}
                             </div>
                             <div className="flex flex-row justify-between mx-10 my-1">
-                                <div className="text-white">
+                                <div className="">
                                     {item.code}
                                 </div>
                                 <div className="">GPA</div>
