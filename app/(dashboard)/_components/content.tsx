@@ -15,43 +15,43 @@ const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 const data = [
     {
-        "id": "3012",
+        "code": "3012",
         "title": "Object Oriented Programming (Pl)",
         "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 4
     },
     {
-        "id": "3022",
+        "code": "3022",
         "title": "Web Programming",
         "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 4
     },
     {
-        "id": "3032",
+        "code": "3032",
         "title": "Data Structures and Algorithms",
         "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 2
     },
     {
-        "id": "3042",
+        "code": "3042",
         "title": "Database Management Systems",
         "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 3
     },
     {
-        "id": "3052",
+        "code": "3052",
         "title": "Operating Systems",
         "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 2
     },
     {
-        "id": "3062",
+        "code": "3062",
         "title": "Information and Computer Security",
         "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 2
     },
     {
-        "id": "3072",
+        "code": "3072",
         "title": "Statistics for IT",
         "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
         "credit": 3
@@ -67,8 +67,8 @@ export default async function Content() {
         <div className="  my-3">
             <div className="min-w-60 grid  grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-1 ">
                 {data.map((item: any) => (
-                    <Link href={`${item.code}`} key={item.code}>
-                        <div className=" size-80 bg-red-500 rounded-2xl shadow-md">
+                    <Link href={`/courses/${item.code}`} key={item.code}>
+                        <div className=" size-80 bg-white border rounded-2xl shadow-sm hover:shadow-md">
                             <Image height={320} width={320} src={item.coverImg} alt="" className="p-2 rounded-3xl" />
                             <div className={` text-center text-white ${poppins.className}`}>
                                 {item.title}
