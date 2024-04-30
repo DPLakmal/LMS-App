@@ -1,7 +1,6 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
-
-const WeekPage = () => {
+const Week = () => {
     return (
         <div className="">
             <Tabs defaultValue="week1" className="w-[400px]">
@@ -19,12 +18,16 @@ const WeekPage = () => {
                     <TabsTrigger value="week11">Week 11</TabsTrigger>
                     <TabsTrigger value="week12">Week 12</TabsTrigger>
                 </TabsList>
-                <TabsContent value="account">Make changes to your account here.</TabsContent>
-                <TabsContent value="password">Change your password here.</TabsContent>
-            </Tabs>
+                <div className=" w-screen   h-full bg-slate-400 ">
+                    <TabsContent value="week1">
+                        Make changes to your account here.
+                    </TabsContent>
+                    <TabsContent value="week2">Change your password here.</TabsContent>
+                </div>
 
+            </Tabs>
         </div>
-    );
+    )
 }
 
-export default WeekPage;
+export default Week
