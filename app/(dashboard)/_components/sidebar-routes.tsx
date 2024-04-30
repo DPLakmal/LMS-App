@@ -23,7 +23,7 @@ export const SideBarRoutes = () => {
         {
             icon: NotebookIcon,
             lable: 'Course',
-            href: '/student/courses',
+            href: '/courses',
         },
     ]
 
