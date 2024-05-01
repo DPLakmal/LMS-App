@@ -5,63 +5,22 @@ import Image from "next/image";
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 
-// async function getData() {
-//     const res = await fetch('http://localhost:3001/api/sem1', { cache: 'force-cache' })
-//     if (!res.ok) {
-//         throw new Error('Failed to fetch data')
-//     }
-//     return res.json()
-// }
-
-const data = [
-    {
-        "code": "3012",
-        "title": "Object Oriented Programming (Pl)",
-        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
-        "credit": 4
-    },
-    {
-        "code": "3022",
-        "title": "Web Programming",
-        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
-        "credit": 4
-    },
-    {
-        "code": "3032",
-        "title": "Data Structures and Algorithms",
-        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
-        "credit": 2
-    },
-    {
-        "code": "3042",
-        "title": "Database Management Systems",
-        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
-        "credit": 3
-    },
-    {
-        "code": "3052",
-        "title": "Operating Systems",
-        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
-        "credit": 2
-    },
-    {
-        "code": "3062",
-        "title": "Information and Computer Security",
-        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
-        "credit": 2
-    },
-    {
-        "code": "3072",
-        "title": "Statistics for IT",
-        "coverImg": "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg",
-        "credit": 3
+async function getData() {
+    const res = await fetch('http://localhost:3001/api/sem1', { cache: 'force-cache' })
+    if (!res.ok) {
+        throw new Error('Failed to fetch data')
     }
-]
+    return res.json()
+}
+
+// const data = [
+
+// ]
 
 
 
 export default async function Content() {
-    // const data = await getData()
+    const data = await getData()
 
     return (
         <div className="  my-3">
