@@ -31,7 +31,7 @@ export const SideBarRoutes = () => {
     return (
         <div className="flex md:flex-col w-full flex-row justify-between">
             {routes.map((route) => (
-                <div className=" border-2 rounded-xl justify-center flex items-center m-0.5 md:m-3">
+                <div className=" border-2 rounded-xl justify-center flex items-center m-0.5 md:m-3" key={route.href}>
                     <SideBarItem
                         key={route.href}
                         icon={route.icon}
