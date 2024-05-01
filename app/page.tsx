@@ -5,7 +5,7 @@ export default async function Home() {
 
   return <main className="flex items-center justify-center h-screen">
     <Link href={"/dashboard"}>
-      <Button size={'lg'}>
+      <Button >
         Go to LMS Dashboard
       </Button>
 
