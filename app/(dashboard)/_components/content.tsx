@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
@@ -6,17 +5,12 @@ const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 
 async function getData() {
-    const res = await fetch('http://localhost:3001/api/sem1', { cache: 'force-cache' })
+    const res = await fetch('https://lms-app-backend-api.onrender.com/api/sem1', { cache: 'force-cache' })
     if (!res.ok) {
         throw new Error('Failed to fetch data')
     }
     return res.json()
 }
-
-// const data = [
-
-// ]
-
 
 
 export default async function Content() {
