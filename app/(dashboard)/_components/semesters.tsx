@@ -3,24 +3,21 @@ import { Poppins } from "next/font/google";
 import Image from "next/image";
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
-
-async function getData() {
-    const res = await fetch('https://lms-app-backend-api.onrender.com/api/sem1', { cache: 'force-cache' })
-    if (!res.ok) {
-        throw new Error('Failed to fetch data')
+export default async function Semester({ semester }: { semester: number }) {
+    async function getData() {
+        const res = await fetch(`https://lms-app-backend-api.onrender.com/api/sem${semester}`, { cache: 'force-cache' })
+        if (!res.ok) {
+            throw new Error('Failed to fetch data')
+        }
+        return res.json()
     }
-    return res.json()
-}
-
-
-export default async function Content() {
     const data = await getData()
 
     return (
         <div className="  my-3">
             <div className="min-w-60 grid  grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-1 ">
                 {data.map((item: any) => (
-                    <Link href={`/courses/${item.code}`} key={item.code}>
+                    <Link href={`/courses/${item.code}`} key={item.code} >
                         <div className=" size-80 bg-white border rounded-2xl shadow-sm hover:shadow-md">
                             <Image height={320} width={320} src={item.coverImg} alt="" className="p-2 rounded-3xl" />
                             <div className={` text-center  ${poppins.className}`}>

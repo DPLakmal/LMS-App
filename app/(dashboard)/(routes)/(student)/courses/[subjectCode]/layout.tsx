@@ -1,3 +1,4 @@
+'use client'
 import { Badge } from '@/components/ui/badge'
 import {
     Breadcrumb,
@@ -15,18 +16,22 @@ import {
     CardFooter,
 } from '@/components/ui/card'
 import { Slash } from 'lucide-react'
+import { useParams, usePathname } from 'next/navigation'
+
 
 const SubjectPageLayout = ({ children }: { children: React.ReactNode }) => {
+    const params = useParams<{ subjectCode: string; }>()
+
     return (
         <div className="w-full m-3">
             <div className="flex flex-col md:flex-row gap-4 ">
                 <div className="">
-                    {' '}
+
                     <Card className="w-auto">
                         <CardHeader>
-                            <CardDescription className="text-lg">HNDIT- 3012</CardDescription>
+                            <CardDescription className="text-lg">HNDIT- {params.subjectCode}</CardDescription>
                             <CardTitle className="text-3xl">
-                                Object Oriented Programming
+
                             </CardTitle>
                         </CardHeader>
                         {/* <CardContent>
@@ -51,7 +56,7 @@ const SubjectPageLayout = ({ children }: { children: React.ReactNode }) => {
                                     </BreadcrumbSeparator>
                                     <BreadcrumbItem>
                                         <BreadcrumbLink href="/components">
-                                            HNDIT-3012 Object Oriented Programming
+                                            HNDIT-{params.subjectCode} Object Oriented Programming
                                         </BreadcrumbLink>
                                     </BreadcrumbItem>
                                 </BreadcrumbList>
