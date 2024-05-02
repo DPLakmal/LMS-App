@@ -12,12 +12,10 @@ const CoursesPage = () => {
                     <TabsTrigger value="Semester 3">Semester 3 </TabsTrigger>
                     <TabsTrigger value="Semester 4">Semester 4 </TabsTrigger>
                 </TabsList>
-                {/* </div> */}
-
-                <TabsContent value="Semester 1"><Semesters semester={1} /></TabsContent>
-                {/* <TabsContent value="Semester 2"><Content /></TabsContent>
-                <TabsContent value="Semester 3"><Content /></TabsContent>
-                <TabsContent value="Semester 4"><Content /></TabsContent> */}
+                <TabsContent value="Semester 1"><Semesters semesterId={1} /></TabsContent>
+                <TabsContent value="Semester 2"><Semesters semesterId={2} /></TabsContent>
+                <TabsContent value="Semester 3"><Semesters semesterId={3} /></TabsContent>
+                <TabsContent value="Semester 4"><Semesters semesterId={4} /></TabsContent>
             </Tabs>
 
         </div>
