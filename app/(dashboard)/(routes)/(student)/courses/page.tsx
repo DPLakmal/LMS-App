@@ -14,7 +14,7 @@ const CoursesPage = () => {
                 </TabsList>
                 {/* </div> */}
 
-                <TabsContent value="Semester 1"><Semesters semester={1} /></TabsContent>
+{/*                 <TabsContent value="Semester 1"><Semesters semester={1} /></TabsContent> */}
                 {/* <TabsContent value="Semester 2"><Content /></TabsContent>
                 <TabsContent value="Semester 3"><Content /></TabsContent>
                 <TabsContent value="Semester 4"><Content /></TabsContent> */}
