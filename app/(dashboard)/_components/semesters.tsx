@@ -3,9 +3,9 @@ import { Poppins } from "next/font/google";
 import Image from "next/image";
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
-export default async function Semester({ semester }: { semester: number }) {
+export default async function Semester({ semesterId }: { semesterId: number }) {
     async function getData() {
-        const res = await fetch(`https://lms-app-backend-api.onrender.com/api/sem${semester}`, { cache: 'force-cache' })
+        const res = await fetch(`https://lms-app-backend-api.onrender.com/api/courses/semesters?semesterId=${semesterId}`, { cache: 'force-cache' })
         if (!res.ok) {
             throw new Error('Failed to fetch data')
         }
@@ -19,7 +19,7 @@ export default async function Semester({ semester }: { semester: number }) {
                 {data.map((item: any) => (
                     <Link href={`/courses/${item.code}`} key={item.code} >
                         <div className=" size-80 bg-white border rounded-2xl shadow-sm hover:shadow-md">
-                            <Image height={320} width={320} src={item.coverImg} alt="" className="p-2 rounded-3xl" />
+                            <Image height={320} width={320} src={item.coverImg == "" ? "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg" : ""} alt="" className="p-2 rounded-3xl" />
                             <div className={` text-center  ${poppins.className}`}>
                                 {item.title}
                             </div>
@@ -37,7 +37,7 @@ export default async function Semester({ semester }: { semester: number }) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="ml-10">Lecturer: Anusha H. A. P.</div>
+                            <div className="ml-10">Lecturer: </div>
                         </div>
                     </Link>
                 ))}
