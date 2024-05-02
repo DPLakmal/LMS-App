@@ -11,17 +11,14 @@ import Image from 'next/image'
 import { Logo } from './logo'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
+import Link from 'next/link'
 
 export const NavBar = () => {
     return (
         <div className="px-5 py-0 gap-x-4 flex-row flex w-full h-20 fixed items-center justify-between bg-white border-b z-[49] pl-6 ">
-            <div className="flex flex-row gap-5">
+            <Link href={'/'}>
                 <Logo />
-                <div className="">
-                    <p className="font-semibold text-base text-sky-700">E - Learning Management System</p>
-                    <p className="text-xs text-muted-foreground">ATI - Galle</p>
-                </div>
-            </div>
+            </Link>
             <div className="ml-auto hidden lg:block">
                 <div className="flex items-center relative">
                     <Input
