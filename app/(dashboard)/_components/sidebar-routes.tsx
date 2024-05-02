@@ -12,13 +12,13 @@ export const SideBarRoutes = () => {
         },
         {
             icon: Folder,
-            lable: 'Past Paper',
-            href: '/student',
+            lable: 'Past Papers',
+            href: '/pastpapers',
         },
         {
             icon: NotebookIcon,
             lable: 'Notice',
-            href: '/lecturer/notice',
+            href: '/notice',
         },
         {
             icon: NotebookIcon,
