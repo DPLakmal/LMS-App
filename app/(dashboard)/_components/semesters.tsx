@@ -14,11 +14,11 @@ export default async function Semester({ semesterId }: { semesterId: number }) {
     const data = await getData()
 
     return (
-        <div className="  my-3">
+        <div className=" flex  my-3">
             <div className="min-w-60 grid  grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-1 ">
                 {data.map((item: any) => (
                     <Link href={`/courses/${item.code}`} key={item.code} >
-                        <div className=" size-80 bg-white border rounded-2xl shadow-sm hover:shadow-md">
+                        <div className=" w-80 h-72 bg-white border rounded-2xl shadow-sm hover:shadow-md">
                             <Image height={320} width={320} src={item.coverImg == "" ? "https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg" : ""} alt="" className="p-2 rounded-3xl" />
                             <div className={` text-center  ${poppins.className}`}>
                                 {item.title}
