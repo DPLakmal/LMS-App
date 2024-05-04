@@ -6,7 +6,7 @@ import { SideBar } from './_components/sidebar'
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div className="h-full ">
+        <div className="w-screen h-screen ">
             <div className="flex-1">
                 <NavBar />
                 <div className="hidden md:flex h-full w-56 flex-col fixed inset-y-0 Z-20">
