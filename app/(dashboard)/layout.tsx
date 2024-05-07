@@ -1,10 +1,20 @@
 
+import { useSession } from 'next-auth/react'
 import { Logo } from './_components/logo'
 import MobileNavigationBar from './_components/mobile-navigationBar'
 import { NavBar } from './_components/navbar'
 import { SideBar } from './_components/sidebar'
+import { redirect } from 'next/navigation'
+import { getServerSession } from 'next-auth'
+import { options } from '../api/auth/[...nextauth]/options'
 
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
+    const session = await getServerSession(options)
+
+    if (!session) {
+        redirect("/api/auth/signin?/callbackUrl?=/dashboard")
+    }
+
     return (
         <div className="w-screen h-screen ">
             <div className="flex-1">
