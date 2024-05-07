@@ -12,8 +12,12 @@ import { Logo } from './logo'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
 import Link from 'next/link'
+import { getServerSession } from 'next-auth'
+import { options } from '@/app/api/auth/[...nextauth]/options'
 
-export const NavBar = () => {
+export const NavBar = async () => {
+    const session = await getServerSession(options)
+
     return (
         <div className="px-5 py-0 gap-x-4 flex-row flex w-full h-20 fixed items-center justify-between bg-white border-b z-[49] pl-6 ">
             <Link href={'/'}>
@@ -34,6 +38,10 @@ export const NavBar = () => {
 
             </div>
 
+            {session ?
+                (<Link href={"/api/auth/signout?callbackUrl=/"}>Logout</Link>) :
+                (<Link href={"/api/auth/signin?"}>Login</Link>)
+            }
 
             <div className="ml-auto">
                 <DropdownMenu>
@@ -44,7 +52,7 @@ export const NavBar = () => {
                             className="overflow-hidden rounded-full"
                         >
                             <Image
-                                src="https://avatar.iran.liara.run/public/boy?username=Ash"
+                                src={session?.user.image}
                                 width={40}
                                 height={40}
                                 alt="Avatar"
@@ -53,12 +61,18 @@ export const NavBar = () => {
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                        <DropdownMenuLabel>
+                            <h1 className='text-lg'>{session?.user.name}
+                            </h1>
+                            <p>{session?.user.email}</p>
+                        </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>Settings</DropdownMenuItem>
                         <DropdownMenuItem>Support</DropdownMenuItem>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>Logout</DropdownMenuItem>
+                        <Link href={'/api/auth/signout?callbackUrl=/'}>
+                            <DropdownMenuItem >Logout</DropdownMenuItem>
+                        </Link>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
