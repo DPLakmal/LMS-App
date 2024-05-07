@@ -6,6 +6,7 @@ const nextConfig = {
       'upload.wikimedia.org',
       'foundr.com',
       'avatar.iran.liara.run',
+      'lh3.googleusercontent.com',
     ],
   },
 }
