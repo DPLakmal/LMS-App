@@ -234,7 +234,7 @@ export default function Years({ YearId }: { YearId: number }) {
                         <div className="text-2xl m-3 text-center">Semester 1</div>
                         <div className="space-y-2 ">
                             {(YearId == 1 ? firstSemster : thirdSemster).map((subject) => (
-                                <Card>
+                                <Card key={subject.code}>
                                     <div className="m-3 pl-4">{subject.title}</div>
                                 </Card>
                             ))}
@@ -244,7 +244,7 @@ export default function Years({ YearId }: { YearId: number }) {
                         <div className="text-2xl m-3 text-center">Semester 2</div>
                         <div className=" space-y-2 ">
                             {(YearId == 1 ? secondSemster : fourthSemster).map((subject) => (
-                                <Card>
+                                <Card key={subject.code}>
                                     <div className="m-3 pl-4">{subject.title}</div>
                                 </Card>
                             ))}

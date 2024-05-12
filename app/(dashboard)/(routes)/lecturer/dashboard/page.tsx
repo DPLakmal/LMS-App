@@ -1,5 +1,12 @@
-const LecturerPage = () => {
-    return (<div className="">LecturerPage</div>);
+const dashoboard = () => {
+    return (
+
+        <div className="">
+
+            lectured dashoboard
+
+        </div>
+    );
 }
 
-export default LecturerPage;
+export default dashoboard;

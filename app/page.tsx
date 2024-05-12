@@ -2,7 +2,6 @@
 import { Button } from '@/components/ui/button'
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -11,12 +10,7 @@ import {
 import Link from 'next/link'
 import Image from 'next/image'
 import { Separator } from '@/components/ui/separator'
-import { NavBar } from './(dashboard)/_components/navbar'
-import { getServerSession } from 'next-auth'
-import { options } from './api/auth/[...nextauth]/options'
-import { redirect } from 'next/navigation'
 import { useSession } from 'next-auth/react'
-import { useState } from 'react'
 
 export default function Home() {
   // const session = getServerSession(options)
@@ -70,7 +64,7 @@ export default function Home() {
           </CardContent> */}
 
             <CardFooter className="flex justify-center">
-              <Link href={"api/auth/signin?callbackUrl=/dashboard"}>
+              <Link href={"/dashboard"}>
                 <Button>Go to Students Dashboard</Button>
               </Link>
             </CardFooter>
@@ -95,6 +89,12 @@ export default function Home() {
             </CardFooter>
           </Card>
         </div>
+
+        <Link href={'/admin'}>
+          <Button>Go to AdminPage</Button>
+        </Link>
+
+
         {/* {session?.user?.name}
         {session?.user?.image}
 

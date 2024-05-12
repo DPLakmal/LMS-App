@@ -13,10 +13,11 @@ import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
-import { options } from '@/app/api/auth/[...nextauth]/options'
+import { authOptions } from '@/app/api/auth/[...nextauth]/options'
+
 
 export const NavBar = async () => {
-    const session = await getServerSession(options)
+    const session = await getServerSession(authOptions)
 
     return (
         <div className="px-5 py-0 gap-x-4 flex-row flex w-full h-20 fixed items-center justify-between bg-white border-b z-[49] pl-6 ">
@@ -38,10 +39,10 @@ export const NavBar = async () => {
 
             </div>
 
-            {session ?
+            {/* {session ?
                 (<Link href={"/api/auth/signout?callbackUrl=/"}>Logout</Link>) :
                 (<Link href={"/api/auth/signin?"}>Login</Link>)
-            }
+            } */}
 
             <div className="ml-auto">
                 <DropdownMenu>

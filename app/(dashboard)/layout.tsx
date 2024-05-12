@@ -6,10 +6,10 @@ import { NavBar } from './_components/navbar'
 import { SideBar } from './_components/sidebar'
 import { redirect } from 'next/navigation'
 import { getServerSession } from 'next-auth'
-import { options } from '../api/auth/[...nextauth]/options'
+import { authOptions } from '../api/auth/[...nextauth]/options'
 
 const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
-    const session = await getServerSession(options)
+    const session = await getServerSession(authOptions)
 
     if (!session) {
         redirect("/api/auth/signin?/callbackUrl?=/dashboard")
