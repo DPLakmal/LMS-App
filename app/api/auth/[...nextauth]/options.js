@@ -58,7 +58,7 @@ export const authOptions = {
 
     async jwt({ token, user }) {
       if (user) token.role = user.role
-      console.log(token)
+      // console.log(token)
       return token
     },
     async session({ session, token }) {

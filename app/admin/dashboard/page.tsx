@@ -1,17 +1,17 @@
-"use client"
-import { Announcement } from "@/app/admin/_components/announcement";
+
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "@/components/ui/resizable";
-import { Check } from "lucide-react";
+
 import React from "react";
+import { Announcement } from "../_components/announcement"
 
+const AdminDashboard = () => {
 
-const StudentDashboard = () => {
+    // const [date, setDate] = React.useState<Date | undefined>(new Date())
 
-    const [date, setDate] = React.useState<Date | undefined>(new Date())
 
     return (
         <div className="w-full h-screen">
@@ -37,13 +37,13 @@ const StudentDashboard = () => {
 
                     <ResizablePanelGroup direction="vertical">
                         <ResizablePanel>
-                            <Announcement></Announcement>
+                            <Announcement />
                         </ResizablePanel >
                         <ResizableHandle withHandle />
                         <ResizablePanel defaultSize={50} className=" m-4">
                             <Calendar
                                 mode="single"
-                                selected={date}
+                                // selected={date}
                                 // onSelect={setDate}
                                 className="rounded-md border"
                             />
@@ -56,4 +56,4 @@ const StudentDashboard = () => {
     );
 }
 
-export default StudentDashboard;
+export default AdminDashboard;
