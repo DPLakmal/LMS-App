@@ -26,7 +26,7 @@ export const Announcement = async () => {
   // get announcenment
   async function getData() {
     const res = await fetch('https://lms-app-backend-api-1.onrender.com/api/announcement')
-    revalidatePath('/admin/dashboard')
+
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
@@ -47,7 +47,7 @@ export const Announcement = async () => {
         <CardContent className="grid gap-4 ">
           <div className='space-y-4'>
             {data.map((announcement: any, index: number) => (
-              <div className="bg-gray-200 rounded-lg p-3 flex-row-2">
+              <div className="bg-gray-200 rounded-lg p-3 flex-row-2" key={index}>
                 <div
                   key={index}
                   className=" mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
