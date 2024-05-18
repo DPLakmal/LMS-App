@@ -17,8 +17,8 @@ export const SideBarRoutes = () => {
         },
         {
             icon: NotebookIcon,
-            lable: 'Notice',
-            href: '/admin/notice',
+            lable: 'Students',
+            href: '/admin/students',
         },
         {
             icon: NotebookIcon,
@@ -29,6 +29,11 @@ export const SideBarRoutes = () => {
             icon: NotebookIcon,
             lable: 'Result',
             href: '/admin/result',
+        },
+        {
+            icon: NotebookIcon,
+            lable: 'Lecturers',
+            href: '/admin/lecturers',
         },
     ]
 
