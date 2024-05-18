@@ -4,6 +4,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 const PastpapersPage = () => {
     return (
         <div className="">
+            <div className="text-3xl text-center m-3">HNDIT - Past Papers</div>
             <div className="md:my-4 md:flex  md:flex-col flex-row  ">
                 <div className="">
                     <Tabs defaultValue="Year 1">
