@@ -23,6 +23,9 @@ export const authOptions = {
     }),
   ],
 
+  // pages: {
+  //   signIn: '/auth/login',
+  // },
   callbacks: {
     async signIn({ profile, user }) {
       const userData = {
