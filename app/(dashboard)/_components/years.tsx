@@ -9,6 +9,7 @@ import {
     DialogTitle,
     DialogDescription,
 } from '@/components/ui/dialog'
+import PastpapersDialogbox from './pastpaperdialogbox'
 const poppins = Poppins({ weight: '600', subsets: ['latin'] })
 
 export default function Years({ YearId }: { YearId: number }) {
@@ -229,24 +230,34 @@ export default function Years({ YearId }: { YearId: number }) {
         <div className="">
             <div className="">
                 <div className="space-y-1"></div>
-                <div className="flex h-full">
-                    <div className="w-[400px] m-5 bg-slate-100 p-4 rounded-lg">
+                <div className="flex h-fit">
+                    <div className="w-[475px] m-5 bg-slate-100 p-4 rounded-lg h-fit">
                         <div className="text-2xl m-3 text-center">Semester 1</div>
                         <div className="space-y-2 ">
                             {(YearId == 1 ? firstSemster : thirdSemster).map((subject) => (
-                                <Card key={subject.code}>
-                                    <div className="m-3 pl-4">{subject.title}</div>
-                                </Card>
+                                <>
+                                    <Card key={subject.code} className='flex justify-between items-center'>
+                                        <div className="m-3 pl-4 text-start">HNDIT {subject.code} - {subject.title}</div>
+                                        <PastpapersDialogbox title={subject.title} code={subject.code}>
+
+                                        </PastpapersDialogbox>
+                                    </Card>
+                                </>
                             ))}
                         </div>
                     </div>
-                    <div className="w-[400px] m-5 bg-slate-100 p-4 rounded-lg">
+                    <div className="w-[475px] m-5 bg-slate-100 p-4 rounded-lg">
                         <div className="text-2xl m-3 text-center">Semester 2</div>
                         <div className=" space-y-2 ">
                             {(YearId == 1 ? secondSemster : fourthSemster).map((subject) => (
-                                <Card key={subject.code}>
-                                    <div className="m-3 pl-4">{subject.title}</div>
-                                </Card>
+                                <>
+                                    <Card key={subject.code} className='flex justify-between items-center'>
+                                        <div className="m-3 pl-4 text-start">HNDIT {subject.code} - {subject.title}</div>
+                                        <PastpapersDialogbox title={subject.title} code={subject.code}>
+
+                                        </PastpapersDialogbox>
+                                    </Card>
+                                </>
                             ))}
                         </div>
                     </div>
