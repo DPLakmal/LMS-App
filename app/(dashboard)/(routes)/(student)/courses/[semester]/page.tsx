@@ -18,7 +18,7 @@ const SemesterPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:3001/api/courses/semesters?id=${id}`); // Replace with your actual API endpoint
+            const response = await fetch(`https://lms-ati-api.vercel.app/api/courses/semesters?id=${id}`, { cache: 'force-cache' }); // Replace with your actual API endpoint
             const data = await response.json();
 
             setSubject(await data?.subjects.map((item: any) => ({ title: item.title, code: item.code, credit: item.credit })));
