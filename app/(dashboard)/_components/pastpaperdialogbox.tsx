@@ -14,7 +14,7 @@ const PastpapersDialogbox = ({ title, code }: any) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:3001/api/pastpapers?code=${code}`); // Replace with your actual API endpoint
+            const response = await fetch(`https://lms-ati-api.vercel.app/api/pastpapers?code=${code}`); // Replace with your actual API endpoint
             const data = await response.json();
 
             setNewSyllabus(await data?.newSyallbus.map((item: any) => ({ title: item.year, link: item.herf })));
