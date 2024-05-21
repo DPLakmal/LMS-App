@@ -1,4 +1,4 @@
-
+"use client"
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -10,31 +10,60 @@ import {
 
 import { Check, TrashIcon } from 'lucide-react'
 
-import Form from '../lecturers/page'
+
 import DeleteAnnouncementButton from './deleteAnnouncement'
 import { revalidatePath } from 'next/cache'
 import DeleteAnnouncement from './deleteAnnouncement'
 import DeleteButton from './deleteButton'
+import Form from './DialogForm'
+import loading from '@/app/(dashboard)/(routes)/(student)/courses/loading'
+import error from 'next/error'
+import { useState, useEffect } from 'react'
 // import { useState } from 'react'
 
 // const [title, setTitle] = useState('');
 // const [description, setDescription] = useState('');
 
-export const Announcement = async () => {
+interface Announcement {
+  title: string;
+  description: string;
+  link: string
+}
 
 
-  // get announcenment
-  async function getData() {
-    const res = await fetch('https://lms-app-backend-api-1.onrender.com/api/announcement')
+export const Announcement = () => {
+  const [data, setData] = useState<Announcement[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-    if (!res.ok) {
-      throw new Error('Failed to fetch data')
+  useEffect(() => {
+
+    async function getData() {
+      try {
+        const res = await fetch('https://lms-ati-api.vercel.app/api/announcement')
+
+        if (!res.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const result = await res.json();
+        setData(result);
+      } catch (error: any) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
     }
-    return res.json()
+
+    getData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
-  const data = await getData()
 
-
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
 
   return (
@@ -64,6 +93,7 @@ export const Announcement = async () => {
                     <p className="text-sm text-muted-foreground">
                       {announcement.description}
                     </p>
+
                   </div>
 
                 </div>
@@ -72,10 +102,8 @@ export const Announcement = async () => {
             ))}
           </div>
         </CardContent>
-        <CardFooter>
-          <Button className="w-full" >
-            <Check className="mr-2 h-4 w-4" /> More
-          </Button>
+        <CardFooter className='flex justify-end'>
+
 
           <Form />
         </CardFooter>
