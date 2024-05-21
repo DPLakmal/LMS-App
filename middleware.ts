@@ -30,5 +30,5 @@ export default withAuth(function middleware(req) {
 
 
 export const config = {
-    matcher: ['/admin', '/lecturer/:path*'],
+    matcher: ['/admin/:path*', '/lecturer/:path*'],
 }
