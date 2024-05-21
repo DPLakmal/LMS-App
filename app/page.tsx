@@ -83,14 +83,14 @@ export default function Home() {
             <p>Card Content</p>
           </CardContent> */}
             <CardFooter className="flex justify-center">
-              <Link href={'/lecturer/dashboard'}>
+              <Link href={"/lecturer/dashboard"}>
                 <Button>Go to Lecturers Dashboard</Button>
               </Link>
             </CardFooter>
           </Card>
         </div>
 
-        <Link href={'/admin/dashboard'}>
+        <Link href={"/admin/dashboard"}>
           <Button>Go to AdminPage</Button>
         </Link>
 
