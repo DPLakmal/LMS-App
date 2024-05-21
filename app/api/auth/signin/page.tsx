@@ -1,35 +1,47 @@
-// "use client"
-
-// import { Button } from "@/components/ui/button";
-// import { Mail } from "lucide-react";
-// import { signIn } from "next-auth/react";
-
-
-// export default function SignIn() {
-//     return (
-//         <>
-//             {/* <Button onClick={() => signIn('google')}>
-//                 <Mail className="mr-2 h-4 w-4" />  Sign in with Google
-//             </Button> */}
-
-//         </>
-//     )
-// }
-
-'use client'
-
-import Link from "next/link";
+// 'use client'
+import { getServerSession } from "next-auth";
+import { redirect, usePathname, useSearchParams } from "next/navigation";
+import { authOptions } from "../[...nextauth]/options";
 import Logo from "@/app/_components/logo";
-import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
 import { signIn } from "next-auth/react";
+import SignInComponent from "./SignInComponent";
 
 
 
-export default function Login() {
-    const handleClick = () => {
-        signIn('google')
-    };
+export default async function SignInPage() {
+
+
+    // const session = await getServerSession(authOptions);
+    // const userrole = session?.user.role
+    // console.log(session?.callbackUrl);
+
+
+    // If the user is already logged in, redirect to the homepage.
+    // if (userrole == 'admin' || userrole == 'stud') {
+    //     redirect('/admin/dashboard');
+    // }
+    // if (userrole == 'student') {
+    //     redirect('/dashboard');
+    // } if (userrole == 'lecturer') {
+    //     redirect('/lecturer/dashboard');
+    // }
+
+    // const pathName = usePathname()
+    // const searchParams = useSearchParams()
+    // console.log(searchParams);
+
+
+
+
+    // if (pathName.endsWith('/dashboard')) {
+    //     redirect('/dashboard');
+    // }
+    // if (pathName.endsWith('/admin/dashboard')) {
+    //     redirect('/admin/dashboard');
+    // }
+    // if (pathName.endsWith('/lecturer/dashboard')) {
+    //     redirect('/lecturer/dashboard');
+    // }
 
 
     return (<div className="w-full h-screen flex justify-center items-center">
@@ -50,9 +62,7 @@ export default function Login() {
                         <div className="text-3xl">Login - LMS</div>
 
                         <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
-                            <Button onClick={handleClick}>
-                                <Mail className="mr-2 h-4 w-4" />  Sign in with Google
-                            </Button>
+                            <SignInComponent />
                         </div>
                     </div>
                 </div>

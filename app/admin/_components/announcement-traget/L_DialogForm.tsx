@@ -7,6 +7,8 @@ import { toast } from '@/components/ui/use-toast';
 import { revalidatePath, revalidateTag } from 'next/cache';
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Badge } from '@/components/ui/badge';
 
 
 
@@ -16,6 +18,7 @@ function Form() {
     const [formData, setFormData] = useState({
         title: '',
         description: '',
+        lecturer: ""
     });
 
     const handleChange = (e: any) => {
@@ -61,11 +64,28 @@ function Form() {
                     <DialogHeader>
                         <DialogTitle>Add Announcement</DialogTitle>
                         <DialogDescription>
-                            for all student
+                            for target student
                         </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
+                        <div className="flex flex-row gap-4">
+
+                            <label>Lecturer:</label>
+                            <Badge>kgkd</Badge>
+
+                            {/* <Select name='lecturer' onValueChange={handleChange} value={formData.lecturer} defaultValue='chandima'>
+                                <SelectTrigger className="w-[180px]">
+                                    <SelectValue placeholder="lecturer" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="chandima">Ms Chandima</SelectItem>
+                                    <SelectItem value="samarasekara">Mr Samarasekara</SelectItem>
+
+                                </SelectContent>
+                            </Select> */}
+                        </div>
                         <div className="grid grid-cols-4 items-center gap-4">
+
 
                             <label>Title:</label>
                             <Textarea
