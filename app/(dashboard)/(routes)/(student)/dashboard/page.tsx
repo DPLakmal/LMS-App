@@ -1,52 +1,52 @@
-"use client"
-import { Announcement } from "@/app/admin/_components/announcement";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
+import { Announcement } from "@/app/(dashboard)/_components/announcement";
+import { LecturerAnnouncement } from "@/app/(dashboard)/_components/announcement-Lecturer";
+import { CalendarDemo } from "@/app/(dashboard)/_components/calender";
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "@/components/ui/resizable";
-import { Check } from "lucide-react";
-import React from "react";
+import { Separator } from "@/components/ui/separator";
+import { Skeleton } from "@/components/ui/skeleton";
+import React, { Suspense, useState } from "react";
+import Loading from "../../../loading";
 
 
 const StudentDashboard = () => {
+    // const [loading, setLoading] = useState(true);
 
-    const [date, setDate] = React.useState<Date | undefined>(new Date())
-
+    // if (loading) {
+    //     return <div className="flex flex-col space-y-3">
+    //         <Skeleton className="h-[125px] w-full rounded-xl" />
+    //         <div className="space-y-2">
+    //             <Skeleton className="h-4 w-[250px]" />
+    //             <Skeleton className="h-4 w-[200px]" />
+    //         </div>
+    //     </div>;
+    // }
     return (
         <div className="w-full h-screen">
             <ResizablePanelGroup direction="horizontal">
                 <ResizablePanel className="m-4 ">
-                    <Carousel>
-                        <CarouselContent>
-                            <CarouselItem><Card className="h-[300px]">
-                                <CardContent className="flex aspect-square items-center justify-center p-6">
-                                    <span className="text-4xl font-semibold">{ }</span>
-                                </CardContent>
-                            </Card></CarouselItem>
-                            <CarouselItem>...</CarouselItem>
-                            <CarouselItem>...</CarouselItem>
-                        </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
-                    </Carousel>
+                    <Separator></Separator>
+                    <div className="m-3">
+                        <Suspense fallback={<Loading />}>
 
+                            <Announcement />
+                        </Suspense>
+                    </div>
                 </ResizablePanel>
                 <ResizableHandle withHandle />
-                <ResizablePanel defaultSize={30} className=" m-4">
-
+                <ResizablePanel defaultSize={30} className=" m-2">
                     <ResizablePanelGroup direction="vertical">
                         <ResizablePanel>
-                            <Announcement></Announcement>
+                            <LecturerAnnouncement />
                         </ResizablePanel >
                         <ResizableHandle withHandle />
                         <ResizablePanel defaultSize={50} className=" m-4">
-                            <Calendar
-                                mode="single"
-                                selected={date}
-                                // onSelect={setDate}
-                                className="rounded-md border"
-                            />
+                            <div className="">
+                                <div className="text-center mb-2 text-lg font-bold">Timeline of HNDIT</div>
+                                <div className="">
+                                    <CalendarDemo />
+                                </div>
+                            </div>
                         </ResizablePanel>
                     </ResizablePanelGroup>
                 </ResizablePanel>
