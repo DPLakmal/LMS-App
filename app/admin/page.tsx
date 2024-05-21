@@ -1,6 +1,8 @@
+import { Announcement } from "./_components/announcement";
+
 const AdminPage = () => {
     return (
-        <div className="">Admin AdminPage</div>
+        <div className=""><Announcement></Announcement></div>
 
     );
 }
