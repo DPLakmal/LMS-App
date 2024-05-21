@@ -90,7 +90,7 @@ export default function Home() {
           </Card>
         </div>
 
-        <Link href={'/admin'}>
+        <Link href={'/admin/dashboard'}>
           <Button>Go to AdminPage</Button>
         </Link>
 
