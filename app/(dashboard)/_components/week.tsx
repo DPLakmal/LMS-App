@@ -9,7 +9,7 @@ const Week = ({ id }: any) => {
     const [Lecturer, setLecturer] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:3001/api/weeks?id=${id}`); // Replace with your actual API endpoint
+            const response = await fetch(`https://lms-ati-api.vercel.app/api/weeks?id=${id}`);
             const data = await response.json();
             setLms(await data?.lms.map((item: any) => ({ title: item.title, link: item.link })));
             setLecturer(await data?.lecturer.map((item: any) => ({ title: item.title, link: item.link })));
