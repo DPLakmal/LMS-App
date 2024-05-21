@@ -15,15 +15,20 @@ export const SideBarRoutes = () => {
             lable: 'Past Papers',
             href: '/pastpapers',
         },
-        {
-            icon: NotebookIcon,
-            lable: 'Notice',
-            href: '/notice',
-        },
+        // {
+        //     icon: NotebookIcon,
+        //     lable: 'Notice',
+        //     href: '/notice',
+        // },
         {
             icon: NotebookIcon,
             lable: 'Course',
             href: '/courses',
+        },
+        {
+            icon: NotebookIcon,
+            lable: 'Result',
+            href: '/results',
         },
     ]
 
