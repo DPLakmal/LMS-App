@@ -9,17 +9,22 @@ import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
+import { getSession, useSession } from 'next-auth/react';
+import { authOptions } from '@/app/api/auth/[...nextauth]/options';
+import { getServerSession } from 'next-auth';
 
 
 
-
-
-function Form() {
+async function Form() {
     const [formData, setFormData] = useState({
         title: '',
         description: '',
         lecturer: ""
     });
+
+    // const session = await getServerSession(authOptions)
+    // const session = await getServerSession(authOptions)
+    // const session = getSession()
 
     const handleChange = (e: any) => {
         console.log(e);
@@ -31,7 +36,7 @@ function Form() {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://lms-ati-api.vercel.app/api/announcement', formData);
+            const response = await axios.post('https://lms-ati-api.vercel.app/api/lecturerannouncement', formData);
             console.log('Form data submitted successfully:', response.data);
 
         } catch (error) {
@@ -71,7 +76,7 @@ function Form() {
                         <div className="flex flex-row gap-4">
 
                             <label>Lecturer:</label>
-                            <Badge>kgkd</Badge>
+                            <Badge>{session?.user.name}</Badge>
 
                             {/* <Select name='lecturer' onValueChange={handleChange} value={formData.lecturer} defaultValue='chandima'>
                                 <SelectTrigger className="w-[180px]">
