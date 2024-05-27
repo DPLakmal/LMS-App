@@ -25,11 +25,7 @@ export const SideBarRoutes = () => {
             lable: 'Course',
             href: '/courses',
         },
-        {
-            icon: NotebookIcon,
-            lable: 'Result',
-            href: '/results',
-        },
+
     ]
 
     const routes = guestRoutes
