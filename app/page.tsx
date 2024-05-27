@@ -95,6 +95,10 @@ export default function Home() {
         </Link>
 
 
+        <Link href={"/api/auth/signUp?callbackUrl=/dashboard"}>
+          <Button>new student Registeration for Lms</Button>
+        </Link>
+
         {/* {session?.user?.name}
         {session?.user?.image}
 
