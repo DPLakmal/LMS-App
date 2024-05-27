@@ -35,7 +35,7 @@ const SemesterPage = () => {
                         <Card >
                             <div className="text-sm m-2">{subject.code}</div>
                             <div className="m-4 ">{subject.title}</div>
-                            <div className="m-4 ">{subject.credit}</div>
+                            <div className="m-4 flex justify-end">Credit: {subject.credit}</div>
 
                         </Card></Link>
                 </div>
