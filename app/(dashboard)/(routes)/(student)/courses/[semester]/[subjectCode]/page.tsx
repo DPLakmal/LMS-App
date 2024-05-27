@@ -6,7 +6,11 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 
 
 
-const SubjectPage = ({ params }: { params: { slug: string } }) => {
+const SubjectPage = ({ params }: {
+  params: {
+    [x: string]: any; slug: string
+  }
+}) => {
   // const router = useRouter()
   const weeks = [
     { "id": 1 },
@@ -26,6 +30,9 @@ const SubjectPage = ({ params }: { params: { slug: string } }) => {
     { "id": 15 }
   ]
 
+  // console.log(params.subjectCode);
+
+
   return (
     <div className="w-full">
       <div className="mt-6">
@@ -37,9 +44,7 @@ const SubjectPage = ({ params }: { params: { slug: string } }) => {
                   <CardTitle >Week {week.id}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Week id={
-                    week.id
-                  }></Week>
+                  <Week id={week.id} subject_code={params.subjectCode} ></Week>
                 </CardContent>
                 <CardFooter>
                   <Button >Open for details in Week {week.id}</Button>
