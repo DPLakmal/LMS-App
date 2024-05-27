@@ -23,9 +23,10 @@ export const authOptions = {
     }),
   ],
 
-  // pages: {
-  //   signIn: '/auth/login',
-  // },
+  pages: {
+    signIn: '/api/auth/login',
+    newUser: '/api/auth/new-user',
+  },
   callbacks: {
     async signIn({ profile, user }) {
       const userData = {
