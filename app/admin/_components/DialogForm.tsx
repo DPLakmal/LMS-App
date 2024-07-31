@@ -7,6 +7,7 @@ import { toast } from '@/components/ui/use-toast';
 import { revalidatePath, revalidateTag } from 'next/cache';
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { Textarea } from '@/components/ui/textarea';
+import { PlusCircle } from 'lucide-react';
 
 
 
@@ -54,12 +55,16 @@ function Form() {
     return (
         <Dialog >
             <DialogTrigger asChild>
-                <Button variant="outline">Add Announcement</Button>
+                <Button variant="outline">
+                <PlusCircle className='mx-2'/>
+                    Add Announcement</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[625px]">
                 <form onSubmit={handleSubmit}>
                     <DialogHeader>
-                        <DialogTitle>Add Announcement</DialogTitle>
+                        <DialogTitle >
+                          
+                            Add Announcement</DialogTitle>
                         <DialogDescription>
                             for all student
                         </DialogDescription>

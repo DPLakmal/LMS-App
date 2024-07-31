@@ -2,6 +2,7 @@
 import Week from "@/app/(dashboard)/_components/week";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import Link from "next/link";
 
 
 
@@ -38,8 +39,8 @@ const SubjectPage = ({ params }: {
       <div className="mt-6">
         <div className="grid grid-cols-3 gap-4">
           {weeks.map((week) => (
-            <div key={week.id}>
-              <Card >
+           <Link href={`/courses/semester-1/1012/week-${week.id}`} key={week.id}>
+              <Card  >
                 <CardHeader className="text-center">
                   <CardTitle >Week {week.id}</CardTitle>
                 </CardHeader>
@@ -47,10 +48,10 @@ const SubjectPage = ({ params }: {
                   <Week id={week.id} subject_code={params.subjectCode} ></Week>
                 </CardContent>
                 <CardFooter>
-                  <Button >Open for details in Week {week.id}</Button>
+                  {/* <Button >Open for details in Week {week.id}</Button> */}
                 </CardFooter>
               </Card>
-            </div>
+              </Link>
           ))}
         </div>
       </div>

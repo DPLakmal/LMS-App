@@ -22,7 +22,7 @@ const AdminDashboardLayout = async ({ children }: { children: React.ReactNode })
                 <div className="hidden md:flex h-full w-56 flex-col fixed inset-y-0 Z-20">
                     <SideBar />
                 </div>
-                <div className="md:pl-56 mx-4 flex items-center justify-center md:mt-0 pt-20">
+                <div className="md:pl-56 w-full  flex items-center justify-center md:mt-0 pt-20">
                     <div className="p-5">
 
                         {children}

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form";
 import { InputForm } from "./s";
 import { useState } from "react";
+import Week from "@/app/(dashboard)/_components/week";
 
 const CoursesAdminPage = () => {
 
@@ -243,8 +244,8 @@ const CoursesAdminPage = () => {
     // const weeks = [{ id: 1 }, { id: 2 }, { id: 3 }];
 
     return (
-        <>
-            <div className="w-full space-y-4">
+        <div >
+            <div className="space-y-3">
                 <label htmlFor="" className="p-3">Select Subject :</label>
                 <Select onValueChange={handleSubjectChange}>
                     <SelectTrigger className="w-[480px]">
@@ -258,8 +259,8 @@ const CoursesAdminPage = () => {
                         ))}
                     </SelectContent>
                 </Select>
-
-                <label htmlFor="" className="p-3">Select Week :</label>
+<div className="flex flex-row items-center">
+<label htmlFor="" className="p-3">Select Week :</label>
                 <Select onValueChange={handleWeekChange}>
                     <SelectTrigger className="w-[180px]">
                         <SelectValue placeholder="Select Week No" />
@@ -272,11 +273,14 @@ const CoursesAdminPage = () => {
                         ))}
                     </SelectContent>
                 </Select>
+</div>
+           
 
                 <InputForm subjectCode={subjectCode} weekId={weekId} />
 
             </div>
-        </>
+           
+        </div>
     );
 }
 

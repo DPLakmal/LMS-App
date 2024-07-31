@@ -1,5 +1,4 @@
 "use client"
-import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -8,17 +7,13 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 
-import { Check, TrashIcon } from 'lucide-react'
 
 
-import DeleteAnnouncementButton from './deleteAnnouncement'
-import { revalidatePath } from 'next/cache'
-import DeleteAnnouncement from './deleteAnnouncement'
 import DeleteButton from './deleteButton'
 import Form from './DialogForm'
-import loading from '@/app/(dashboard)/(routes)/(student)/courses/loading'
-import error from 'next/error'
+
 import { useState, useEffect } from 'react'
+import { Button } from '@/components/ui/button'
 // import { useState } from 'react'
 
 // const [title, setTitle] = useState('');
@@ -105,9 +100,15 @@ export const Announcement = () => {
         <CardFooter className='flex justify-end'>
 
 
-          <Form />
+       
         </CardFooter>
       </Card>
+<div className="flex items-center justify-center m-10">
+
+
+      <Form />
+
+</div>
     </>
   )
 }
