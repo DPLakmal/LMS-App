@@ -5,15 +5,15 @@ import DownloadButtonList from './DownloadButtonList'
 import { useEffect, useState } from 'react';
 
 const Week = ({ id, subject_code }: { id: any, subject_code: any }) => {
-    const url = "https://firebasestorage.googleapis.com/v0/b/lms-app-c508c.appspot.com/o/"
+    // const url = "https://firebasestorage.googleapis.com/v0/b/lms-app-c508c.appspot.com/o/"
     const [Lms, setLms] = useState([]);
     const [Lecturer, setLecturer] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(`https://lms-ati-api.vercel.app/api/${subject_code}/weeks?week_no=${id}`);
             const data = await response.json();
-            setLms(await data?.lms.map((item: any) => ({ title: item.title, link: url + item.link })));
-            setLecturer(await data?.lecturer.map((item: any) => ({ title: item.title, link: url + item.link })));
+            setLms(await data?.lms.map((item: any) => ({ title: item.title, link: item.link })));
+            setLecturer(await data?.lecturer.map((item: any) => ({ title: item.title, link:item.link })));
         };
         fetchData();
     }, [id]);
@@ -40,7 +40,7 @@ const Week = ({ id, subject_code }: { id: any, subject_code: any }) => {
                     {Lecturer?.length > 0 && (
                         <>
                             <Separator className='mx-2' />
-                            <div className="h-auto my-3">Lecturer's Resources</div>
+                            <div className="h-auto my-3">Lecturer &lsquo s Resources</div>
                             <div className="mr-6">
                                 <div className="">
                                     <DownloadButtonList data={Lecturer}></DownloadButtonList>

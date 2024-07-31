@@ -83,21 +83,21 @@ export default function Home() {
             <p>Card Content</p>
           </CardContent> */}
             <CardFooter className="flex justify-center">
-              <Link href={"/lecturer/dashboard"}>
+              <Link href={"/admin"}>
                 <Button>Go to Lecturers Dashboard</Button>
               </Link>
             </CardFooter>
           </Card>
         </div>
 
-        <Link href={"/admin/dashboard"}>
+        {/* <Link href={"/admin/dashboard"}>
           <Button>Go to AdminPage</Button>
         </Link>
 
 
         <Link href={"/api/auth/signUp?callbackUrl=/dashboard"}>
           <Button>new student Registeration for Lms</Button>
-        </Link>
+        </Link> */}
 
         {/* {session?.user?.name}
         {session?.user?.image}

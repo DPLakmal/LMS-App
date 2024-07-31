@@ -16,7 +16,7 @@ const SEM = () => {
                 <div key={index} className="semester-card">
                     <Link href={`courses/semester-${semester.id}`}>
                         <Card>
-                            <CardHeader>
+                            <CardHeader className=" bg-slate-200 p-4 rounded-lg m-5">
                                 <CardTitle className="text-2xl">{`Semester - ${semester.id}`}</CardTitle>
                             </CardHeader>
                             <CardContent>

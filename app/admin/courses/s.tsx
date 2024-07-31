@@ -5,6 +5,9 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
+import { storage } from "@/app/firebaseConfig";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { UploadIcon } from "lucide-react";
 
 type FormValues = {
     link: string;
@@ -31,8 +34,10 @@ export const InputForm: React.FC<Props> = ({ subjectCode, weekId }) => {
     console.log(weekId);
 
 
+    const [uploadedUrl, setUploadedUrl] = useState(""); 
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>({
-        resolver: zodResolver(FormSchema),
+     
         defaultValues: {
             link: "",
             title: ""
@@ -51,7 +56,7 @@ export const InputForm: React.FC<Props> = ({ subjectCode, weekId }) => {
                 },
                 body: JSON.stringify({
                     title: data.title,
-                    link: data.link,
+                    link: uploadedUrl,
                     type: 'lms' // You can change this to 'lecturer' if needed
                 })
             });
@@ -85,7 +90,7 @@ export const InputForm: React.FC<Props> = ({ subjectCode, weekId }) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="w-2/3 space-y-6">
             <div>
-                <label htmlFor="">Title of lecture file Name</label>
+                <label htmlFor="">Title of lecture file Name :</label>
                 <Input
                     {...register("title")}
                     placeholder="Enter Title"
@@ -93,11 +98,14 @@ export const InputForm: React.FC<Props> = ({ subjectCode, weekId }) => {
                 {errors.title && <span>{errors.title.message}</span>}
             </div>
             <div>
-                <label htmlFor="">URL of file </label>
-                <Input
+            <label htmlFor="">Select File :</label>
+                {/*     <Input
                     {...register("link")}
                     placeholder="Enter URL"
-                />
+                /> */}
+
+<UploadFile />
+           
                 {errors.link && <span>{errors.link.message}</span>}
             </div>
             <Button type="submit" disabled={isLoading}>
@@ -105,4 +113,73 @@ export const InputForm: React.FC<Props> = ({ subjectCode, weekId }) => {
             </Button>
         </form>
     );
+
+
+
+    
+ function UploadFile  () {
+        const [file, setFile] = useState<File | null>(null); // State to store the selected file
+        const [uploading, setUploading] = useState(false); // State to indicate the upload status
+       // State to store the uploaded image URL
+      
+        const handleFileChange = (event: any) => {
+          setFile(event.target.files[0]); // Set the selected file
+        };
+      
+        const handleUpload = async () => {
+          if (!file) return; // Return if no file is selected
+      
+          setUploading(true); // Set uploading state to true
+      
+          const storageRef = ref(storage, `images/${file.name}`); // Create a reference to the file in Firebase Storage
+      
+          try {
+            await uploadBytes(storageRef, file); // Upload the file to Firebase Storage
+            const url:any = await getDownloadURL(storageRef); // Get the download URL of the uploaded file
+            setUploadedUrl(url);
+           // Set the uploaded image URL
+      
+        
+           
+           
+            console.log("File Uploaded Successfully");
+          } catch (error) {
+            console.error('Error uploading the file', error);
+          } finally {
+            setUploading(false); // Set uploading state to false
+          }
+         
+        };
+      
+      
+      
+        return (
+          <div className="flex flex-col gap-y-5 items-center bg-slate-200 p-4 rounded-lg">
+            <Input type="file"  onChange={handleFileChange}  className="bg-neutral-100"/> {/* File input to select the image */}
+            <Button onClick={handleUpload} disabled={uploading} className={`gap-3 ${file? "flex" : "hidden"}`}>
+              <UploadIcon/>
+              {uploading ? "Uploading..." : "Upload Image"} {/* Button to upload the image */}
+            </Button>
+            {uploadedUrl && (
+              <div className="container flex items-center justify-center" >
+                <p>{file?.name}</p>
+                {/* <p>Uploaded image:</p> */}
+                {/* <Image
+                  src={uploadedUrl}
+                  alt="Uploaded image"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  className="rounded-full aspect-square"
+                /> */}
+              </div>
+            )}
+          </div>
+        );
+       
+      }
+
 };
+
+
+

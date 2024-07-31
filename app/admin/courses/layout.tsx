@@ -9,12 +9,10 @@ const CoursesAdminLayout = ({ children }: { children: React.ReactNode }) => {
                     <CardTitle>Add  Content to week </CardTitle>
                     {/* <CardDescription>Card Description</CardDescription> */}
                 </CardHeader>
-                <CardContent>
+                <CardContent className="bg-neutral-50 p-5 rounded-lg m-4">
                     {children}
                 </CardContent>
-                <CardFooter>
-                    <p>Card Footer</p>
-                </CardFooter>
+           
             </Card>
 
             <Week id={1} subject_code={1012}/>

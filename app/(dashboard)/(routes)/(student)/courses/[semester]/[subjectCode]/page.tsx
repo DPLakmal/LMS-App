@@ -39,7 +39,7 @@ const SubjectPage = ({ params }: {
       <div className="mt-6">
         <div className="grid grid-cols-3 gap-4">
           {weeks.map((week) => (
-           <Link href={`/courses/semester-1/1012/week-${week.id}`} key={week.id}>
+          //  <Link href={`/courses/semester-1/1012/week-${week.id}`} key={week.id}>
               <Card  >
                 <CardHeader className="text-center">
                   <CardTitle >Week {week.id}</CardTitle>
@@ -51,7 +51,7 @@ const SubjectPage = ({ params }: {
                   {/* <Button >Open for details in Week {week.id}</Button> */}
                 </CardFooter>
               </Card>
-              </Link>
+              // </Link>
           ))}
         </div>
       </div>

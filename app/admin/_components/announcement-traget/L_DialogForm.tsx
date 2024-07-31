@@ -76,7 +76,7 @@ async function Form() {
                         <div className="flex flex-row gap-4">
 
                             <label>Lecturer:</label>
-                            <Badge>{session?.user.name}</Badge>
+                            {/* <Badge>{session?.user.name}</Badge> */}
 
                             {/* <Select name='lecturer' onValueChange={handleChange} value={formData.lecturer} defaultValue='chandima'>
                                 <SelectTrigger className="w-[180px]">
